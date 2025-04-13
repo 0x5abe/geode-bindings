@@ -16690,7 +16690,9 @@ class PlatformToolbox {
     static void toggleCPUSleepMode(bool);
     static void toggleForceTimer(bool);
     static void toggleFullScreen(bool, bool, bool);
-    static void toggleLockCursor(bool isLocked) = ios 0x16f41c, imac 0x4b1850;
+    static void toggleLockCursor(bool isLocked) = ios 0x16f41c, imac 0x4b1850, m1 0x41a144, win inline {
+        cocos2d::CCEGLView::sharedOpenGLView()->toggleLockCursor(isLocked);
+    };
     static void toggleMouseControl(bool);
     static void toggleSmoothFix(bool);
     static void toggleVerticalSync(bool);
