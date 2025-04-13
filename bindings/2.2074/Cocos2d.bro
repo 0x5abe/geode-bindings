@@ -2539,8 +2539,6 @@ class cocos2d::CCEGLView {
     // [[missing(android, mac, ios)]]
     // static cocos2d::CCEGLView* createWithRect(gd::string const&, cocos2d::CCRect, float);
     // sharedOpenGLView() = ios 0x130f38, imac 0x50df50;
-	[[missing(android, ios)]]
-	void showCursor(bool state) = m1 0x4514e4, imac 0x4f0430;
 }
 
 [[link(win, android)]]
