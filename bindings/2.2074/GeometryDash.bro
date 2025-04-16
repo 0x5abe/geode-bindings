@@ -9169,7 +9169,7 @@ class GJBaseGameLayer : cocos2d::CCLayer, TriggerEffectDelegate {
     TodoReturn prepareTransformParent(bool);
     void preResumeGame() = ios 0x200998, imac 0x141dd0;
     TodoReturn preUpdateVisibility(float);
-    void processActivatedAudioTriggers(float) = ios 0x208724, win 0x23d3e0, imac 0x14f3a0;
+    void processActivatedAudioTriggers(float) = ios 0x208724, win 0x23d3e0, imac 0x14f3a0, m1 0x12402c;
     void processAdvancedFollowAction(AdvancedFollowInstance&, bool, float) = win 0x22a020;
     void processAdvancedFollowActions(float) = win 0x229e00;
     void processAreaActions(float, bool) = win 0x223ce0;
@@ -9203,7 +9203,7 @@ class GJBaseGameLayer : cocos2d::CCLayer, TriggerEffectDelegate {
     void processRotationActions() = win 0x226510;
     void processSFXObjects() = ios 0x1e36b8, win 0x23b480, imac 0x525060;
     TodoReturn processSFXState(SFXTriggerState*, SFXTriggerState*, int, float);
-    TodoReturn processSongState(int, float, float, int, float, float, gd::vector<SongTriggerState>*, SongTriggerGameObject*);
+    bool processSongState(int, float, float, int, float, float, gd::vector<SongTriggerState>*, SongTriggerGameObject*) = win 0x23edc0, m1 0x125454, imac 0x151010, ios 0x209364;
     TodoReturn processStateObjects() = ios 0x1ec358;
     void processTransformActions(bool) = win 0x2273a0;
     void queueButton(int button, bool push, bool isPlayer2) = ios 0x1fc9b8, win inline, imac 0x13ad90, m1 0x1134ec {
@@ -14991,6 +14991,8 @@ class LevelSettingsObject : cocos2d::CCNode {
     bool m_fadeIn;
     // property kA16
     bool m_fadeOut;
+    // property kA46
+    bool m_dontReset;
     // property kA6
     int m_backgroundIndex;
     // property kA7
