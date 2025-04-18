@@ -9186,8 +9186,8 @@ class GJBaseGameLayer : cocos2d::CCLayer, TriggerEffectDelegate {
             player->m_lastActivatedPortal = object;
         }
         auto ret = object;
-        if (m_gameState.m_isDualMode && m_gameState.m_unkGameObjPtr2) ret = m_gameState.m_unkGameObjPtr2;
-        if (object) m_gameState.m_unkGameObjPtr1 = object;
+        if (m_gameState.m_isDualMode && m_gameState.m_lastActivatedPortal2) ret = m_gameState.m_lastActivatedPortal2;
+        if (object) m_gameState.m_lastActivatedPortal1 = object;
         return ret;
     }
     void processCommands(float) = ios 0x201880, win 0x234170, imac 0x1435a0, m1 0x11a2d0;
@@ -10619,8 +10619,8 @@ class GJGameState {
     float m_unkUint5;
     float m_unkUint6;
     float m_unkUint7;
-    GameObject* m_unkGameObjPtr1;
-    GameObject* m_unkGameObjPtr2;
+    GameObject* m_lastActivatedPortal1;
+    GameObject* m_lastActivatedPortal2;
     cocos2d::CCPoint m_cameraPosition;
     bool m_unkBool10;
     float m_levelFlipping;
